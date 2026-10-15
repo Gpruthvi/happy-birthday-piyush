@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#2a0f2e" />
 <title>Happy Birthday, Dr. Piyush 🎂</title>
-<meta name="description" content="A birthday prescription for Dr. Piyush — tap to open." />
+<meta name="description" content="A birthday prescription for Dr. Piyush. Tap to open." />
 <meta property="og:title" content="Happy Birthday, Dr. Piyush 🎂" />
 <meta property="og:description" content="You've got a prescription waiting. Tap to open." />
 <meta property="og:image" content="https://gpruthvi.github.io/happy-birthday-piyush/img/p8.jpg" />
@@ -277,7 +277,13 @@
     <div class="reveal">
       <div class="chapter-no">Chapter 3</div>
       <h2>Jalandhar, baby! 🥁</h2>
-      <p>You invited us to your sister's wedding — and gave me my <b>first-ever Punjabi wedding</b>. The food, the music, the energy, the hospitality… unmatched. Thank you for making us feel like family.</p>
+      <p>You invited us to your sister's wedding and gave me my <b>first-ever Punjabi wedding</b>. The food, the music, the energy, the hospitality… unmatched. Thank you for making us feel like family.</p>
+    </div>
+    <div class="photo reveal"><img src="img/wedding1.jpg" alt="Piyush with his sister, the bride" loading="lazy" /><div class="cap">Brother of the bride, looking sharp 🤵</div></div>
+    <div class="photo video-wrap reveal">
+      <video id="wedClip" src="img/wedding.mp4" poster="img/wedding-poster.jpg" playsinline muted loop autoplay preload="metadata"></video>
+      <button class="unmute" data-for="wedClip">🔇 tap for sound</button>
+      <div class="cap">The gang at the wedding 📸</div>
     </div>
     <div class="dhol-stage reveal" id="dholStage">
       <button class="dhol" id="dhol" aria-label="Tap the dhol">🥁</button>
@@ -315,7 +321,7 @@
       <div class="rx-line" id="rxLine">Tap below to get today's dose 👇</div>
       <div class="rx-dose" id="rxDose">&nbsp;</div>
       <button class="btn green" id="rxBtn">💊 Dispense a dose</button>
-      <div class="sig">— Dr. Pruthvi (unlicensed)</div>
+      <div class="sig">Dr. Pruthvi (unlicensed)</div>
     </div>
   </section>
 
@@ -372,7 +378,7 @@
       <p>Thank you for the late-night PG chats, the badminton chaos, and for bringing us to Jalandhar for the wedding. I still talk about it.</p>
       <p>I hope this year brings you everything you're working for: success at Dr. Dassan's Clinic, at MU and in whatever else you take on, plus good health, lots of happiness and many more celebrations (with dhol, obviously).</p>
       <p>Keep doing the family name proud. Here's to the 4th generation. 🥂</p>
-      <div class="from">— Pruthvi</div>
+      <div class="from">Pruthvi</div>
     </div>
     <div class="finale-actions">
       <button class="btn gold" id="partyBtn">🎉 One more round of confetti</button>
@@ -473,8 +479,10 @@
     [...chat.children].forEach((b, i) => setTimeout(() => { b.classList.add('show'); if (b.matches('.me,.him')) pop(); }, 500 + i * 750)); } }, { threshold: .4 }).observe(chat);
 
   /* ---------- Video ---------- */
-  const clip = document.getElementById('clip'), um = document.getElementById('unmute');
-  um.addEventListener('click', () => { clip.muted = !clip.muted; clip.play(); um.textContent = clip.muted ? '🔇 tap for sound' : '🔊 sound on'; });
+  document.querySelectorAll('.unmute').forEach(btn => {
+    const v = btn.dataset.for ? document.getElementById(btn.dataset.for) : btn.parentElement.querySelector('video');
+    btn.addEventListener('click', () => { v.muted = !v.muted; v.play(); btn.textContent = v.muted ? '🔇 tap for sound' : '🔊 sound on'; });
+  });
 
   /* ---------- Dhol ---------- */
   const dhol = document.getElementById('dhol'), stage = document.getElementById('dholStage'), dc = document.getElementById('dholCount');
@@ -495,7 +503,7 @@
   /* ---------- Rx ---------- */
   const doses = [
     ['Happiness 1000mg', 'Take daily. No upper limit.'],
-    ['Butter chicken, extra butter', 'At least twice a week, for the soul.'],
+    ['Paneer butter masala, extra butter', 'At least twice a week, for the soul.'],
     ['8 hours of sleep', 'Yes, actually. Doctor\'s orders.'],
     ['Zero stress, all success', 'Apply to every MU assignment and every patient.'],
     ['Dhol beats, unlimited refills', 'Whenever life feels too serious.'],
