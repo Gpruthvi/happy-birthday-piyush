@@ -372,17 +372,21 @@
       <div class="chapter-no">From me to you</div>
       <h2>Happy Birthday, bhai ❤️</h2>
     </div>
-    <div class="letter reveal">
+    <div class="letter rx-card reveal">
+      <div class="hdr">
+        <div class="clinic">Dr. Dassan's Clinic<small>Special Birthday Prescription</small></div>
+        <div class="sym">℞</div>
+      </div>
+      <div style="font-weight:600;font-size:0.85rem;color:var(--green);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Patient: Dr. Piyush</div>
       <p>Piyush,</p>
-      <p>You were the first person I spoke to at Masters' Union, and somehow that turned into one of the best friendships of the year. A great neighbour, a great host and a genuinely great guy.</p>
-      <p>Thank you for the late-night PG chats, the badminton chaos, and for bringing us to Jalandhar for the wedding. I still talk about it.</p>
-      <p>I hope this year brings you everything you're working for: success at Dr. Dassan's Clinic, at MU and in whatever else you take on, plus good health, lots of happiness and many more celebrations (with dhol, obviously).</p>
-      <p>Keep doing the family name proud. Here's to the 4th generation. 🥂</p>
-      <div class="from">Pruthvi</div>
+      <p>You were the first person I spoke to at Masters' Union during our orientation break, and somehow that turned into one of the best friendships of the year. A great neighbour, a great host and a genuinely great guy.</p>
+      <p>Thank you for the late-night PG chats, and for bringing us to Jalandhar for the wedding. I still talk about it.</p>
+      <p>I hope this year brings you everything you're working for: success at Dr. Dassan's Clinic and in whatever else you take on, plus good health, lots of happiness and many more celebrations.</p>
+      <p>Keep doing the family name proud I would say</p>
+      <div class="sig" style="font-size:1.4rem;margin-top:16px;">Dr. Pruthvi (unlicensed)</div>
     </div>
     <div class="finale-actions">
       <button class="btn gold" id="partyBtn">🎉 One more round of confetti</button>
-      <button class="btn ghost" id="shareBtn">📤 Share</button>
     </div>
   </section>
   <footer>Made with ❤️ for Piyush · 2026</footer>
@@ -616,11 +620,6 @@
 
   /* ---------- Finale ---------- */
   document.getElementById('partyBtn').onclick = () => { confetti(260); playSong(); buzz([40, 30, 40]); };
-  document.getElementById('shareBtn').onclick = async () => {
-    const data = { title: 'Happy Birthday, Dr. Piyush 🎂', text: 'A birthday prescription for Piyush 🎉', url: location.href };
-    if (navigator.share) { try { await navigator.share(data); } catch (_) {} }
-    else { try { await navigator.clipboard.writeText(location.href); alert('Link copied!'); } catch (_) { prompt('Copy this link:', location.href); } }
-  };
 })();
 </script>
 </body>
